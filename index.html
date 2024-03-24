@@ -33,10 +33,44 @@
         }
         .project {
             margin-bottom: 20px;
-            border: 1px solid #ccc;
             border-radius: 8px;
-            padding: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project:hover .popover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-10px);
+        }
+        .project img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        .project .content {
+            padding: 10px;
+        }
+        .project .popover {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .project h3 {
+            margin-top: 0;
         }
         .project a {
             text-decoration: none;
@@ -64,14 +98,25 @@
 
     <section>
         <div class="project">
-            <h3><a href="https://project1.example.com">Project 1</a></h3>
-            <p>Description of Project 1.</p>
+            <img src="project1.jpg" alt="Project 1">
+            <div class="content">
+                <h3><a href="https://project1.example.com">Project 1</a></h3>
+                <p>Description of Project 1.</p>
+                <div class="popover">
+                    Hover over for details
+                </div>
+            </div>
         </div>
         <div class="project">
-            <h3><a href="https://project2.example.com">Project 2</a></h3>
-            <p>Description of Project 2.</p>
+            <img src="project2.jpg" alt="Project 2">
+            <div class="content">
+                <h3><a href="https://project2.example.com">Project 2</a></h3>
+                <p>Description of Project 2.</p>
+                <div class="popover">
+                    Hover over for details
+                </div>
+            </div>
         </div>
-        <!-- Add more projects as needed -->
     </section>
 
     <footer>
